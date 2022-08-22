@@ -311,69 +311,6 @@ template {
   display: none;
 }
 
-/*
-essential styles:
-these make the slideshow work
-*/
-.slides {
-  position: relative;
-  height: 150px;
-  padding: 0px;
-  margin: 0px;
-  list-style-type: none;
-}
-
-.slide {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  z-index: 1;
-  -webkit-transition: opacity 1s;
-  -o-transition: opacity 1s;
-  transition: opacity 1s;
-}
-
-.active {
-  opacity: 1;
-  z-index: 2;
-}
-
-/*
-non-essential styles:
-just for appearance; change whatever you want
-*/
-.slide {
-  font-size: 40px;
-  padding: 40px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background: #333;
-  color: #fff;
-}
-
-.slide:nth-of-type(1) {
-  background: red;
-}
-
-.slide:nth-of-type(2) {
-  background: orange;
-}
-
-.slide:nth-of-type(3) {
-  background: green;
-}
-
-.slide:nth-of-type(4) {
-  background: blue;
-}
-
-.slide:nth-of-type(5) {
-  background: purple;
-}
-
 .container {
   max-width: 1280px;
   padding: 0 20px;
@@ -381,46 +318,98 @@ just for appearance; change whatever you want
 }
 
 .slides {
-  margin-bottom: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  height: 150px;
+  margin-bottom: 15px;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+  background: #333333;
+}
+.slide.active {
+  opacity: 1;
 }
 
 .controls {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
 }
 
 .control {
-  padding: 10px 20px;
-  background-color: lightsteelblue;
-  display: block;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  padding: 10px 10px;
+  margin: 0 5px;
+  border-radius: 10px;
+  background: -o-linear-gradient(301deg, rgb(24, 187, 156) 0%, rgb(106, 57, 175) 42%, rgb(187, 24, 148) 72%, rgb(115, 53, 134) 100%);
+  background: linear-gradient(149deg, rgb(24, 187, 156) 0%, rgb(106, 57, 175) 42%, rgb(187, 24, 148) 72%, rgb(115, 53, 134) 100%);
+  -webkit-animation: gradient 2s infinite linear;
+          animation: gradient 2s infinite linear;
+  background-size: 150%;
+}
+.control:nth-child(2) {
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
 }
 
+@-webkit-keyframes control {
+  0% {
+    background-position: 80% 0%;
+  }
+  50% {
+    background-position: 20% 100%;
+  }
+  100% {
+    background-position: 80% 0%;
+  }
+}
+
+@keyframes control {
+  0% {
+    background-position: 80% 0%;
+  }
+  50% {
+    background-position: 20% 100%;
+  }
+  100% {
+    background-position: 80% 0%;
+  }
+}
 .indicators {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  width: 100%;
+  bottom: 65px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 5px;
 }
 
 .indicator {
   width: 30px;
-  height: 30px;
-  border-radius: 15px;
-  background-color: steelblue;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .indicator.active {
-  background-color: tomato;
+  background-color: rgb(255, 255, 255);
 }

@@ -1,32 +1,7 @@
+.idea/
 node_modules/
-package.json
-package-lock.json
-.eslintrc.js
-.eslintrc.json
+assets/scss
 .csscomb.json
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
-
-# Other files and folders
-.settings/
 gulpfile.js
-
-assets/scss/
-assets/libs/
-
-assets/js/base.js
-
-
-
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
-
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+package-lock.json
+package.json
